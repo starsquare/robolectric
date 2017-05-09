@@ -78,7 +78,7 @@ public class ShadowActivity extends ShadowContextThemeWrapper {
   private ComponentName callingActivity;
 
   @Implementation
-  public void __constructor__() {
+  protected void __constructor__() {
     invokeConstructor(Activity.class, realActivity);
   }
 
