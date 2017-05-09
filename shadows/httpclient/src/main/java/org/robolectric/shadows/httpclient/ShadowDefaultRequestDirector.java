@@ -163,7 +163,7 @@ public class ShadowDefaultRequestDirector {
   }
 
   @Implementation
-  public HttpResponse execute(HttpHost httpHost, HttpRequest httpRequest, HttpContext httpContext) throws HttpException, IOException {
+  protected HttpResponse execute(HttpHost httpHost, HttpRequest httpRequest, HttpContext httpContext) throws HttpException, IOException {
     if (FakeHttp.getFakeHttpLayer().isInterceptingHttpRequests()) {
       return FakeHttp.getFakeHttpLayer().emulateRequest(httpHost, httpRequest, httpContext, realObject);
     } else {

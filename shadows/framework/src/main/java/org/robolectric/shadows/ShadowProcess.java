@@ -11,7 +11,7 @@ public class ShadowProcess {
   private static int uid = getRandomApplicationUid();
 
   @Implementation
-  public static final int myPid() {
+  protected static final int myPid() {
     return pid;
   }
 

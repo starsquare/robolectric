@@ -219,7 +219,7 @@ public class ShadowWranglerIntegrationTest {
   @Implements(Parent.class)
   public static class ShadowOfParent {
     @Implementation
-    public String get() {
+    protected String get() {
       return "from shadow of parent";
     }
   }
@@ -314,7 +314,7 @@ public class ShadowWranglerIntegrationTest {
   @Implements(value = AClassWithDifficultArgs.class, looseSignatures = true)
   public static class ShadowAClassWithDifficultArgs {
     @Implementation
-    public Object aMethod(Object s) {
+    protected Object aMethod(Object s) {
       return "a" + s;
     }
   }
