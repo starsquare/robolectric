@@ -6,6 +6,7 @@ import javax.annotation.processing.ProcessingEnvironment;
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.TypeElement;
+import javax.tools.Diagnostic.Kind;
 import java.util.Set;
 
 /**
@@ -22,7 +23,7 @@ public class ImplementationValidator extends FoundOnImplementsValidator {
     if (modifiers.contains(Modifier.PRIVATE)
         || modifiers.contains(Modifier.PUBLIC)
         || !modifiers.contains(Modifier.PROTECTED)) {
-      error("@Implementation methods should be protected");
+      message(Kind.WARNING, "@Implementation methods should be protected");
     }
 
     // TODO: Check that it has the right signature
