@@ -250,7 +250,7 @@ public class ShadowParcel {
   }
 
   @Implementation @HiddenApi
-  synchronized public static Number nativeCreate() {
+  synchronized protected static Number nativeCreate() {
     long nativePtr = nextNativePtr++;
     NATIVE_PTR_TO_PARCEL.put(nativePtr, new ByteBuffer());
     return castNativePtr(nativePtr);

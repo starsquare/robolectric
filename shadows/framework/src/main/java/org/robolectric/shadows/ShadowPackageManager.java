@@ -305,7 +305,7 @@ public class ShadowPackageManager {
       info.serviceInfo.packageName = packageName;
       info.serviceInfo.applicationInfo = new ApplicationInfo();
       info.filter = new IntentFilter();
-      for (Iterator<String> it = intentFilter.typesIterator(); it.hasNext(); ) {
+      for (Iterator<String> it = intentFilter.typesIterator(); it.hasNext();) {
         info.filter.addDataType(it.next());
       }
       return info;
@@ -390,7 +390,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getPackageInfo(String, int)} instead.
    */
   @Deprecated
-  public PackageInfo getPackageInfo(String packageName, int flags) throws NameNotFoundException {
+  protected PackageInfo getPackageInfo(String packageName, int flags) throws NameNotFoundException {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -398,7 +398,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getApplicationInfo(String, int)} instead.
    */
   @Deprecated
-  public ApplicationInfo getApplicationInfo(String packageName, int flags) throws NameNotFoundException {
+  protected ApplicationInfo getApplicationInfo(String packageName, int flags) throws NameNotFoundException {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -406,7 +406,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getActivityInfo(ComponentName, int)} instead.
    */
   @Deprecated
-  public ActivityInfo getActivityInfo(ComponentName className, int flags) throws NameNotFoundException {
+  protected ActivityInfo getActivityInfo(ComponentName className, int flags) throws NameNotFoundException {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -414,7 +414,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getReceiverInfo(ComponentName, int)} instead.
    */
   @Deprecated
-  public ActivityInfo getReceiverInfo(ComponentName className, int flags) throws NameNotFoundException {
+  protected ActivityInfo getReceiverInfo(ComponentName className, int flags) throws NameNotFoundException {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -422,7 +422,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getServiceInfo(ComponentName, int)} instead.
    */
   @Deprecated
-  public ServiceInfo getServiceInfo(ComponentName className, int flags) throws NameNotFoundException {
+  protected ServiceInfo getServiceInfo(ComponentName className, int flags) throws NameNotFoundException {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -430,7 +430,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getInstalledPackages(int)} instead.
    */
   @Deprecated
-  public List<PackageInfo> getInstalledPackages(int flags) {
+  protected List<PackageInfo> getInstalledPackages(int flags) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -438,7 +438,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#queryIntentActivities(Intent, int)} instead.
    */
   @Deprecated
-  public List<ResolveInfo> queryIntentActivities(Intent intent, int flags) {
+  protected List<ResolveInfo> queryIntentActivities(Intent intent, int flags) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -446,7 +446,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#queryIntentServices(Intent, int)}  instead.
    */
   @Deprecated
-  public List<ResolveInfo> queryIntentServices(Intent intent, int flags) {
+  protected List<ResolveInfo> queryIntentServices(Intent intent, int flags) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -454,7 +454,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#queryBroadcastReceivers(Intent, int)} instead.
    */
   @Deprecated
-  public List<ResolveInfo> queryBroadcastReceivers(Intent intent, int flags) {
+  protected List<ResolveInfo> queryBroadcastReceivers(Intent intent, int flags) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -462,7 +462,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#resolveActivity(Intent, int)} instead.
    */
   @Deprecated
-  public ResolveInfo resolveActivity(Intent intent, int flags) {
+  protected ResolveInfo resolveActivity(Intent intent, int flags) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -470,7 +470,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#resolveService(Intent, int)} instead.
    */
   @Deprecated
-  public ResolveInfo resolveService(Intent intent, int flags) {
+  protected ResolveInfo resolveService(Intent intent, int flags) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -495,7 +495,7 @@ public class ShadowPackageManager {
       resolveInfoForIntent.put(intent, infoList);
     }
 
-    for (Iterator<ResolveInfo> iterator = infoList.iterator(); iterator.hasNext(); ) {
+    for (Iterator<ResolveInfo> iterator = infoList.iterator(); iterator.hasNext();) {
       ResolveInfo resolveInfo = iterator.next();
       if (resolveInfo.activityInfo.packageName.equals(packageName)) {
         iterator.remove();
@@ -507,7 +507,7 @@ public class ShadowPackageManager {
     return drawableList.get(intent.getComponent());
   }
 
-  public Drawable getActivityIcon(ComponentName componentName) throws NameNotFoundException {
+  protected Drawable getActivityIcon(ComponentName componentName) throws NameNotFoundException {
     return drawableList.get(componentName);
   }
 
@@ -523,7 +523,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getApplicationIcon(String)} instead.
    */
   @Deprecated
-  public Drawable getApplicationIcon(String packageName) throws NameNotFoundException {
+  protected Drawable getApplicationIcon(String packageName) throws NameNotFoundException {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -535,7 +535,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#getLaunchIntentForPackage(String)} instead.
    */
   @Deprecated
-  public Intent getLaunchIntentForPackage(String packageName) {
+  protected Intent getLaunchIntentForPackage(String packageName) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -551,11 +551,11 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#setComponentEnabledSetting(ComponentName, int, int)} instead.
    */
   @Deprecated
-  public void setComponentEnabledSetting(ComponentName componentName, int newState, int flags) {
+  protected void setComponentEnabledSetting(ComponentName componentName, int newState, int flags) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
-  public void setApplicationEnabledSetting(String packageName, int newState, int flags) {
+  protected void setApplicationEnabledSetting(String packageName, int newState, int flags) {
     applicationEnabledSettingMap.put(packageName, newState);
   }
 
@@ -771,7 +771,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#hasSystemFeature(String)} instead.
    */
   @Deprecated
-  public boolean hasSystemFeature(String name) {
+  protected boolean hasSystemFeature(String name) {
     throw new UnsupportedOperationException("Not implemented");
   }
 
@@ -783,7 +783,7 @@ public class ShadowPackageManager {
     drawables.put(new Pair(packageName, resourceId), drawable);
   }
 
-  public Drawable getDrawable(String packageName, int resourceId, ApplicationInfo applicationInfo) {
+  protected Drawable getDrawable(String packageName, int resourceId, ApplicationInfo applicationInfo) {
     return drawables.get(new Pair(packageName, resourceId));
   }
 
@@ -791,7 +791,7 @@ public class ShadowPackageManager {
    * @deprecated Prefer {@link PackageManager#checkPermission(String, String)} instead.
    */
   @Deprecated
-  public int checkPermission(String permName, String pkgName) {
+  protected int checkPermission(String permName, String pkgName) {
     return 0;
   }
 
@@ -870,7 +870,7 @@ public class ShadowPackageManager {
   }
 
   @Implementation
-  public PackageInfo getPackageArchiveInfo(String archiveFilePath, int flags) {
+  protected PackageInfo getPackageArchiveInfo(String archiveFilePath, int flags) {
     List<PackageInfo> result = new ArrayList<>();
     for (PackageInfo packageInfo : packageInfos.values()) {
       if (applicationEnabledSettingMap.get(packageInfo.packageName)

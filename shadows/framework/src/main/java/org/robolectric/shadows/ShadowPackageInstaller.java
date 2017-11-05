@@ -49,7 +49,7 @@ public class ShadowPackageInstaller {
 
   @Implementation
   @Nullable
-  public PackageInstaller.SessionInfo getSessionInfo(int sessionId) {
+  protected PackageInstaller.SessionInfo getSessionInfo(int sessionId) {
     return sessionInfos.get(sessionId);
   }
 
@@ -90,7 +90,7 @@ public class ShadowPackageInstaller {
 
   @Implementation
   @NonNull
-  public PackageInstaller.Session openSession(int sessionId) throws IOException {
+  protected PackageInstaller.Session openSession(int sessionId) throws IOException {
     if (!sessionInfos.containsKey(sessionId)) {
       throw new SecurityException("Invalid session Id: " + sessionId);
     }
@@ -157,7 +157,7 @@ public class ShadowPackageInstaller {
     private ShadowPackageInstaller shadowPackageInstaller;
 
     @Implementation
-    public void __constructor__() {}
+    protected void __constructor__() {}
 
     @Implementation
     protected @NonNull OutputStream openWrite(@NonNull String name, long offsetBytes, long lengthBytes) throws IOException {
@@ -197,7 +197,7 @@ public class ShadowPackageInstaller {
     }
 
     @Implementation
-    public void abandon() {
+    protected void abandon() {
       shadowPackageInstaller.abandonSession(sessionId);
     }
 

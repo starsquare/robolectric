@@ -36,7 +36,7 @@ public class ShadowKeyguardManager {
    * @see #setKeyguardLocked(boolean)
    */
   @Implementation
-  public boolean isKeyguardLocked() {
+  protected boolean isKeyguardLocked() {
     return isKeyguardLocked;
   }
 

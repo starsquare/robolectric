@@ -53,7 +53,7 @@ public class ShadowPath {
   }
 
   @Implementation // TODO: This should only be used to enable interpolator resource parsing
-  public float[] approximate(float acceptableError) {
+  protected float[] approximate(float acceptableError) {
     return new float[]{0, 0, 0, 1, 1, 1};
   }
 

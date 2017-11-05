@@ -25,7 +25,7 @@ public class ShadowToast {
   @RealObject Toast toast;
 
   @Implementation
-  public void __constructor__(Context context) {}
+  protected void __constructor__(Context context) {}
 
   @Implementation
   protected static Toast makeText(Context context, int resId, int duration) {

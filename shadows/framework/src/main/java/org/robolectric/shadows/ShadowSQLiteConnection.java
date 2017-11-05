@@ -72,8 +72,8 @@ public class ShadowSQLiteConnection {
   }
 
   @Implementation(minSdk = O_MR1)
-  public static long nativeOpen(String path, int openFlags, String label, boolean enableTrace,
-                                boolean enableProfile, int lookasideSlotSize, int lookasideSlotCount) {
+  protected static long nativeOpen(String path, int openFlags, String label, boolean enableTrace,
+      boolean enableProfile, int lookasideSlotSize, int lookasideSlotCount) {
     return nativeOpen(path, openFlags, label, enableTrace, enableProfile).longValue();
   }
 

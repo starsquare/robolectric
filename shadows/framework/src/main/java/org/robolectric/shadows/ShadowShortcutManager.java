@@ -77,7 +77,7 @@ public class ShadowShortcutManager {
   }
 
   @Implementation
-  public void enableShortcuts(List<String> shortcutIds) {
+  protected void enableShortcuts(List<String> shortcutIds) {
     for (String shortcutId : shortcutIds) {
       ShortcutInfo shortcut = disabledPinnedShortcuts.remove(shortcutId);
       if (shortcut != null) {
@@ -87,32 +87,32 @@ public class ShadowShortcutManager {
   }
 
   @Implementation
-  public List<ShortcutInfo> getDynamicShortcuts() {
+  protected List<ShortcutInfo> getDynamicShortcuts() {
     return ImmutableList.copyOf(dynamicShortcuts.values());
   }
 
   @Implementation
-  public int getIconMaxHeight() {
+  protected int getIconMaxHeight() {
     return MAX_ICON_DIMENSION;
   }
 
   @Implementation
-  public int getIconMaxWidth() {
+  protected int getIconMaxWidth() {
     return MAX_ICON_DIMENSION;
   }
 
   @Implementation
-  public List<ShortcutInfo> getManifestShortcuts() {
+  protected List<ShortcutInfo> getManifestShortcuts() {
     return ImmutableList.of();
   }
 
   @Implementation
-  public int getMaxShortcutCountPerActivity() {
+  protected int getMaxShortcutCountPerActivity() {
     return MAX_NUM_SHORTCUTS_PER_ACTIVITY;
   }
 
   @Implementation
-  public List<ShortcutInfo> getPinnedShortcuts() {
+  protected List<ShortcutInfo> getPinnedShortcuts() {
     ImmutableList.Builder<ShortcutInfo> pinnedShortcuts = ImmutableList.builder();
     pinnedShortcuts.addAll(activePinnedShortcuts.values());
     pinnedShortcuts.addAll(disabledPinnedShortcuts.values());
@@ -120,12 +120,12 @@ public class ShadowShortcutManager {
   }
 
   @Implementation
-  public boolean isRateLimitingActive() {
+  protected boolean isRateLimitingActive() {
     return false;
   }
 
   @Implementation(minSdk = Build.VERSION_CODES.O)
-  public boolean isRequestPinShortcutSupported() {
+  protected boolean isRequestPinShortcutSupported() {
     return isRequestPinShortcutSupported;
   }
 
@@ -134,22 +134,22 @@ public class ShadowShortcutManager {
   }
 
   @Implementation
-  public void removeAllDynamicShortcuts() {
+  protected void removeAllDynamicShortcuts() {
     dynamicShortcuts.clear();
   }
 
   @Implementation
-  public void removeDynamicShortcuts(List<String> shortcutIds) {
+  protected void removeDynamicShortcuts(List<String> shortcutIds) {
     for (String shortcutId : shortcutIds) {
       dynamicShortcuts.remove(shortcutId);
     }
   }
 
   @Implementation
-  public void reportShortcutUsed(String shortcutId) {}
+  protected void reportShortcutUsed(String shortcutId) {}
 
   @Implementation(minSdk = Build.VERSION_CODES.O)
-  public boolean requestPinShortcut(ShortcutInfo shortcut, IntentSender resultIntent) {
+  protected boolean requestPinShortcut(ShortcutInfo shortcut, IntentSender resultIntent) {
     if (disabledPinnedShortcuts.containsKey(shortcut.getId())) {
       throw new IllegalArgumentException(
           "Shortcut with ID [" + shortcut.getId() + "] already exists and is disabled.");
@@ -170,13 +170,13 @@ public class ShadowShortcutManager {
   }
 
   @Implementation
-  public boolean setDynamicShortcuts(List<ShortcutInfo> shortcutInfoList) {
+  protected boolean setDynamicShortcuts(List<ShortcutInfo> shortcutInfoList) {
     dynamicShortcuts.clear();
     return addDynamicShortcuts(shortcutInfoList);
   }
 
   @Implementation
-  public boolean updateShortcuts(List<ShortcutInfo> shortcutInfoList) {
+  protected boolean updateShortcuts(List<ShortcutInfo> shortcutInfoList) {
     List<ShortcutInfo> existingShortcutsToUpdate = new ArrayList<>();
     for (ShortcutInfo shortcutInfo : shortcutInfoList) {
       if (dynamicShortcuts.containsKey(shortcutInfo.getId())

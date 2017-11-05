@@ -490,7 +490,7 @@ public class ShadowContentResolver {
   }
 
   @Implementation(minSdk = KITKAT)
-  public void takePersistableUriPermission(@NonNull Uri uri, int modeFlags) {
+  protected void takePersistableUriPermission(@NonNull Uri uri, int modeFlags) {
     Objects.requireNonNull(uri, "uri may not be null");
     modeFlags &= (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
 
@@ -518,7 +518,7 @@ public class ShadowContentResolver {
   }
 
   @Implementation(minSdk = KITKAT)
-  public void releasePersistableUriPermission(@NonNull Uri uri, int modeFlags) {
+  protected void releasePersistableUriPermission(@NonNull Uri uri, int modeFlags) {
     Objects.requireNonNull(uri, "uri may not be null");
     modeFlags &= (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
 
@@ -551,7 +551,7 @@ public class ShadowContentResolver {
   }
 
   @Implementation(minSdk = KITKAT)
-  public @NonNull List<UriPermission> getPersistedUriPermissions() {
+  protected @NonNull List<UriPermission> getPersistedUriPermissions() {
     return uriPermissions;
   }
 
@@ -738,8 +738,8 @@ public class ShadowContentResolver {
   }
 
   @Implementation
-  protected void unregisterContentObserver( ContentObserver observer ) {
-    if ( observer != null ) {
+  protected void unregisterContentObserver( ContentObserver observer) {
+    if (observer != null) {
       Collection<CopyOnWriteArraySet<ContentObserver>> observerSets;
       synchronized (this) {
         observerSets = contentObservers.values();
@@ -769,7 +769,7 @@ public class ShadowContentResolver {
    * @param uri Given URI
    * @return The content observers, or null.
    */
-  synchronized public Collection<ContentObserver> getContentObservers( Uri uri ) {
+  synchronized public Collection<ContentObserver> getContentObservers(Uri uri) {
     CopyOnWriteArraySet<ContentObserver> observers = contentObservers.get(uri);
     return (observers == null) ? Collections.<ContentObserver>emptyList() : observers;
   }

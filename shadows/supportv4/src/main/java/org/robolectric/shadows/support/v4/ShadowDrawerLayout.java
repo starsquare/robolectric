@@ -28,7 +28,7 @@ public class ShadowDrawerLayout extends ShadowViewGroup {
    * Drawer animations are disabled in unit tests.
    */
   @Implementation
-  public void openDrawer(View drawerView, boolean animate) {
+  protected void openDrawer(View drawerView,boolean animate) {
     directlyOn(realDrawerLayout, DrawerLayout.class).openDrawer(drawerView, false);
   }
 
@@ -36,7 +36,7 @@ public class ShadowDrawerLayout extends ShadowViewGroup {
    * Drawer animations are disabled in unit tests.
    */
   @Implementation
-  public void closeDrawer(View drawerView, boolean animate) {
+  protected void closeDrawer(View drawerView,boolean animate) {
     directlyOn(realDrawerLayout, DrawerLayout.class).closeDrawer(drawerView, false);
   }
 }

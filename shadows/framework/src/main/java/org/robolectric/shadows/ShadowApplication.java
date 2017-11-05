@@ -673,7 +673,7 @@ public class ShadowApplication extends ShadowContextWrapper {
     return latestWakeLock;
   }
 
-  public void addWakeLock( PowerManager.WakeLock wl ) {
+  public void addWakeLock(PowerManager.WakeLock wl) {
     latestWakeLock = wl;
   }
 

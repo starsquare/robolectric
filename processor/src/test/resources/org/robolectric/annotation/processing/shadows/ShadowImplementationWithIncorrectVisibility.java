@@ -8,7 +8,7 @@ import org.robolectric.annotation.Implements;
 public class ShadowImplementationWithIncorrectVisibility {
 
   @Implementation
-  public static void publicMethod() {}
+  protected static void publicMethod() {}
 
   @Implementation
   static void packageMethod() {}

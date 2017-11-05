@@ -162,17 +162,17 @@ public class ShadowAudioManager {
   }
 
   @Implementation
-  public boolean isBluetoothScoOn() {
+  protected boolean isBluetoothScoOn() {
     return isBluetoothScoOn;
   }
 
   @Implementation
-  public void setBluetoothScoOn(boolean isBluetoothScoOn) {
+  protected void setBluetoothScoOn(boolean isBluetoothScoOn) {
     this.isBluetoothScoOn = isBluetoothScoOn;
   }
 
   @Implementation
-  public boolean isMusicActive() {
+  protected boolean isMusicActive() {
     return isMusicActive;
   }
 

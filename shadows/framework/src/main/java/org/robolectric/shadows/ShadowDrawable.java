@@ -53,7 +53,7 @@ public class ShadowDrawable {
   }
 
   @Implementation // todo: this sucks, it's all just so we can detect 9-patches
-  public static Drawable createFromResourceStream(Resources res, TypedValue value,
+  protected static Drawable createFromResourceStream(Resources res, TypedValue value,
                           InputStream is, String srcName, BitmapFactory.Options opts) {
     if (is == null) {
       return null;

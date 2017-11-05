@@ -49,7 +49,7 @@ public class ShadowUserManager {
   }
 
   @Implementation(minSdk = LOLLIPOP)
-  public boolean isManagedProfile() {
+  protected boolean isManagedProfile() {
     return managedProfile;
   }
 
@@ -95,7 +95,7 @@ public class ShadowUserManager {
   }
 
   @Implementation
-  public long getSerialNumberForUser(UserHandle userHandle) {
+  protected long getSerialNumberForUser(UserHandle userHandle) {
     Long result = serialNumbers.get(userHandle);
     return result == null ? -1L : result;
   }

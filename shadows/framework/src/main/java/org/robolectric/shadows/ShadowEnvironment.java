@@ -219,7 +219,7 @@ public class ShadowEnvironment {
   public static class ShadowUserEnvironment {
 
     @Implementation
-    public File[] getExternalDirs() {
+    protected File[] getExternalDirs() {
       return externalDirs.toArray(new File[externalDirs.size()]);
     }
   }

@@ -89,7 +89,7 @@ public class ShadowPowerManager {
   }
 
   @Implementation(minSdk = M)
-  public boolean isIgnoringBatteryOptimizations(String packageName) {
+  protected boolean isIgnoringBatteryOptimizations(String packageName) {
     Boolean result = ignoringBatteryOptimizations.get(packageName);
     return result == null ? false : result;
   }
@@ -149,7 +149,7 @@ public class ShadowPowerManager {
     }
 
     @Implementation
-    public synchronized void setWorkSource(WorkSource ws) {
+    protected synchronized void setWorkSource(WorkSource ws) {
       workSource = ws;
     }
 

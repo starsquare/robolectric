@@ -85,7 +85,7 @@ public class ShadowTelephonyManager {
 
   /** Call state may be specified via {@link #setCallState(int)}. */
   @Implementation
-  public int getCallState() {
+  protected int getCallState() {
     return callState;
   }
 

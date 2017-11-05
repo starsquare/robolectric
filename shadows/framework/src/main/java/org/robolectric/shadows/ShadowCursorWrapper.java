@@ -23,132 +23,132 @@ public class ShadowCursorWrapper {
     wrappedCursor = c;
   }
 
-  @Override @Implementation
+  @Implementation
   protected int getCount() {
     return wrappedCursor.getCount();
   }
 
-  @Override @Implementation
+  @Implementation
   protected int getPosition() {
     return wrappedCursor.getPosition();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean move(int i) {
     return wrappedCursor.move(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean moveToPosition(int i) {
     return wrappedCursor.moveToPosition(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean moveToFirst() {
     return wrappedCursor.moveToFirst();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean moveToLast() {
     return wrappedCursor.moveToLast();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean moveToNext() {
     return wrappedCursor.moveToNext();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean moveToPrevious() {
     return wrappedCursor.moveToPrevious();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean isFirst() {
     return wrappedCursor.isFirst();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean isLast() {
     return wrappedCursor.isLast();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean isBeforeFirst() {
     return wrappedCursor.isBeforeFirst();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean isAfterLast() {
     return wrappedCursor.isAfterLast();
   }
 
-  @Override @Implementation
+  @Implementation
   protected int getColumnIndex(String s) {
     return wrappedCursor.getColumnIndex(s);
   }
 
-  @Override @Implementation
+  @Implementation
   protected int getColumnIndexOrThrow(String s) throws IllegalArgumentException {
     return wrappedCursor.getColumnIndexOrThrow(s);
   }
 
-  @Override @Implementation
+  @Implementation
   protected String getColumnName(int i) {
     return wrappedCursor.getColumnName(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected String[] getColumnNames() {
     return wrappedCursor.getColumnNames();
   }
 
-  @Override @Implementation
+  @Implementation
   protected int getColumnCount() {
     return wrappedCursor.getColumnCount();
   }
 
-  @Override @Implementation
+  @Implementation
   protected byte[] getBlob(int i) {
     return wrappedCursor.getBlob(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected String getString(int i) {
     return wrappedCursor.getString(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected void copyStringToBuffer(int i, CharArrayBuffer charArrayBuffer) {
     wrappedCursor.copyStringToBuffer(i, charArrayBuffer);
   }
 
-  @Override @Implementation
+  @Implementation
   protected short getShort(int i) {
     return wrappedCursor.getShort(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected int getInt(int i) {
     return wrappedCursor.getInt(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected long getLong(int i) {
     return wrappedCursor.getLong(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected float getFloat(int i) {
     return wrappedCursor.getFloat(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected double getDouble(int i) {
     return wrappedCursor.getDouble(i);
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean isNull(int i) {
     return wrappedCursor.isNull(i);
   }
@@ -163,67 +163,67 @@ public class ShadowCursorWrapper {
     return wrappedCursor.requery();
   }
 
-  @Override @Implementation
+  @Implementation
   protected void close() {
     wrappedCursor.close();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean isClosed() {
     return wrappedCursor.isClosed();
   }
 
-  @Override @Implementation
+  @Implementation
   protected void registerContentObserver(ContentObserver contentObserver) {
     wrappedCursor.registerContentObserver(contentObserver);
   }
 
-  @Override @Implementation
+  @Implementation
   protected void unregisterContentObserver(ContentObserver contentObserver) {
     wrappedCursor.unregisterContentObserver(contentObserver);
   }
 
-  @Override @Implementation
+  @Implementation
   protected void registerDataSetObserver(DataSetObserver dataSetObserver) {
     wrappedCursor.registerDataSetObserver(dataSetObserver);
   }
 
-  @Override @Implementation
+  @Implementation
   protected void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
     wrappedCursor.unregisterDataSetObserver(dataSetObserver);
   }
 
-  @Override @Implementation
+  @Implementation
   protected void setNotificationUri(ContentResolver contentResolver, Uri uri) {
     wrappedCursor.setNotificationUri(contentResolver, uri);
   }
 
-  @Override @Implementation(minSdk = KITKAT)
+  @Implementation(minSdk = KITKAT)
   protected Uri getNotificationUri() {
     return wrappedCursor.getNotificationUri();
   }
 
-  @Override @Implementation
+  @Implementation
   protected boolean getWantsAllOnMoveCalls() {
     return wrappedCursor.getWantsAllOnMoveCalls();
   }
 
-  @Override @Implementation(minSdk = M)
+  @Implementation(minSdk = M)
   protected void setExtras(Bundle extras) {
     wrappedCursor.setExtras(extras);
   }
 
-  @Override @Implementation
+  @Implementation
   protected Bundle getExtras() {
     return wrappedCursor.getExtras();
   }
 
-  @Override @Implementation
+  @Implementation
   protected Bundle respond(Bundle bundle) {
     return wrappedCursor.respond(bundle);
   }
 
-  @Override @Implementation
+  @Implementation
   protected int getType(int columnIndex) {
     return wrappedCursor.getType(columnIndex);
   }

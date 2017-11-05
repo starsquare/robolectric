@@ -46,7 +46,7 @@ public class ShadowWifiManager {
   }
 
   @Implementation
-  public int getWifiState() {
+  protected int getWifiState() {
     if (isWifiEnabled()) {
       return WifiManager.WIFI_STATE_ENABLED;
     } else {
@@ -78,7 +78,7 @@ public class ShadowWifiManager {
   }
 
   @Implementation(minSdk = LOLLIPOP)
-  public List<WifiConfiguration> getPrivilegedConfiguredNetworks() {
+  protected List<WifiConfiguration> getPrivilegedConfiguredNetworks() {
     return getConfiguredNetworks();
   }
 
@@ -143,7 +143,7 @@ public class ShadowWifiManager {
   }
 
   @Implementation(minSdk = JELLY_BEAN_MR2)
-  public boolean isScanAlwaysAvailable() {
+  protected boolean isScanAlwaysAvailable() {
     return isScanAlwaysAvailable;
   }
 

@@ -47,7 +47,7 @@ public class ShadowCursorAdapter extends ShadowBaseAdapter {
   protected View getView(int position, View convertView, ViewGroup parent) {
     if (views != null) {
       // if the cursor is null OR there are no views to dispense return null
-      if (realCursorAdapter.getCursor() == null || views.size() == 0 ) {
+      if (realCursorAdapter.getCursor() == null || views.size() == 0) {
         return null;
       }
 

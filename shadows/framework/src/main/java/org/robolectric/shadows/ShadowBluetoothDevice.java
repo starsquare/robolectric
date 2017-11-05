@@ -17,7 +17,7 @@ public class ShadowBluetoothDevice {
    * from invoking {@link BluetoothAdapter#getBluetoothService}.
    */
   @Implementation
-  public static IBluetooth getService() {
+  protected static IBluetooth getService() {
     // Attempt to call the underlying getService method, but ignore any Exceptions. This allows us
     // to easily create BluetoothDevices for testing purposes without having any actual Bluetooth
     // capability.

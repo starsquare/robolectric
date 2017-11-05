@@ -25,7 +25,7 @@ public class ShadowHandlerThreadTest {
   @After
   public void tearDown() throws Exception {
     // Try to ensure we've exited the thread at the end of each test
-    if ( handlerThread != null ) {
+    if (handlerThread != null) {
       handlerThread.quit();
       handlerThread.join();
     }

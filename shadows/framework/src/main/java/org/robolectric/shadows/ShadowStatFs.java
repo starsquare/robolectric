@@ -43,22 +43,22 @@ public class ShadowStatFs {
   }
 
   @Implementation(minSdk = JELLY_BEAN_MR2)
-  public long getFreeBlocksLong() {
+  protected long getFreeBlocksLong() {
     return stat.freeBlocks;
   }
 
   @Implementation(minSdk = JELLY_BEAN_MR2)
-  public long getFreeBytes() {
+  protected long getFreeBytes() {
     return getBlockSizeLong() * getFreeBlocksLong();
   }
 
   @Implementation(minSdk = JELLY_BEAN_MR2)
-  public long getAvailableBytes() {
+  protected long getAvailableBytes() {
     return getBlockSizeLong() * getAvailableBlocksLong();
   }
 
   @Implementation(minSdk = JELLY_BEAN_MR2)
-  public long getTotalBytes() {
+  protected long getTotalBytes() {
     return getBlockSizeLong() * getBlockCountLong();
   }
   @Implementation

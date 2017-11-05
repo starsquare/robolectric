@@ -170,7 +170,7 @@ public class ShadowLog {
    * @param tag The tag to get logs for
    * @return The list of log items for the tag
    */
-  public static List<LogItem> getLogsForTag( String tag ) {
+  public static List<LogItem> getLogsForTag(String tag) {
     Queue<LogItem> logs = logsByTag.get(tag);
     return logs == null ? null : new ArrayList<>(logs);
   }

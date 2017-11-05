@@ -21,7 +21,7 @@ public class ShadowProcess {
    * {@link android.os.Process#myUid()}.
    */
   @Implementation
-  public static final int myUid() {
+  protected static final int myUid() {
     return uid;
   }
 

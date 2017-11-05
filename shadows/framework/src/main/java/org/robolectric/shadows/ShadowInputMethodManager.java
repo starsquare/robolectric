@@ -30,7 +30,7 @@ public class ShadowInputMethodManager {
   private Optional<SoftInputVisibilityChangeHandler> visibilityChangeHandler = Optional.empty();
 
   @HiddenApi @Implementation
-  static public InputMethodManager peekInstance() {
+  protected static InputMethodManager peekInstance() {
     return Shadow.newInstanceOf(InputMethodManager.class);
   }
 

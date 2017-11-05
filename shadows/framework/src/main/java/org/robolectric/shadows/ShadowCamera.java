@@ -184,7 +184,7 @@ public class ShadowCamera {
   }
 
   @Implementation
-  protected static void getCameraInfo(int cameraId, Camera.CameraInfo cameraInfo ) {
+  protected static void getCameraInfo(int cameraId, Camera.CameraInfo cameraInfo) {
     Camera.CameraInfo foundCam = cameras.get( cameraId );
     cameraInfo.facing = foundCam.facing;
     cameraInfo.orientation = foundCam.orientation;

@@ -10,7 +10,7 @@ import org.robolectric.annotation.Implements;
 @Implements(WifiInfo.class)
 public class ShadowWifiInfo {
   @Implementation
-  public static void __staticInitializer__() {}
+  protected static void __staticInitializer__() {}
 
   private String macAddress = "02:00:00:00:00:00"; // WifiInfo.DEFAULT_MAC_ADDRESS (@hide)
   private String ssid = "<unknown ssid>"; // WifiSsid.NONE (@hide)

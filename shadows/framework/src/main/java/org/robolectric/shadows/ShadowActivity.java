@@ -337,7 +337,7 @@ public class ShadowActivity extends ShadowContextThemeWrapper {
   }
 
   @Implementation(minSdk = JELLY_BEAN)
-  public void finishAffinity() {
+  protected void finishAffinity() {
     finishWasCalled = true;
   }
 

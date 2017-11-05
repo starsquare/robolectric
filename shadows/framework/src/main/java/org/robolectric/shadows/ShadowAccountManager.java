@@ -455,7 +455,7 @@ public class ShadowAccountManager {
   }
 
   @Implementation
-  public AccountManagerFuture<Bundle> getAuthToken(
+  protected AccountManagerFuture<Bundle> getAuthToken(
       final Account account,
       final String authTokenType,
       final Bundle options,

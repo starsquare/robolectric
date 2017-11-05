@@ -51,7 +51,7 @@ public class ShadowMotionEvent {
   }
 
   @Implementation
-  protected void setAction(int action ) {
+  protected void setAction(int action) {
     this.action = action;
   }
 

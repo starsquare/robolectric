@@ -177,7 +177,7 @@ public class ShadowLogTest {
     List<LogItem> allItems = ShadowLog.getLogs();
     assertThat(allItems.size()).isEqualTo(6);
     int i = 1;
-    for ( LogItem item : allItems ) {
+    for (LogItem item : allItems) {
       assertThat(item.msg).isEqualTo(Integer.toString(i));
       i++;
     }
@@ -186,7 +186,7 @@ public class ShadowLogTest {
     assertUniformLogsForTag( "tag3", 1 );
   }
 
-  private void assertUniformLogsForTag( String tag, int count ) {
+  private void assertUniformLogsForTag(String tag, int count) {
     List<LogItem> tag1Items = ShadowLog.getLogsForTag( tag );
     assertThat(tag1Items.size()).isEqualTo(count);
     int last = -1;
