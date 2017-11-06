@@ -14,7 +14,7 @@ public class ShadowStaticLayout {
 
   @Implementation(minSdk = LOLLIPOP, maxSdk = LOLLIPOP_MR1)
   @HiddenApi
-  protected static int[] nLineBreakOpportunities(String locale, char text, int length, int recycle) {
+  protected static int[] nLineBreakOpportunities(String locale, char[] text, int length, int[] recycle) {
     return new int[] {-1};
   }
 
